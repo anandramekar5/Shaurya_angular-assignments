@@ -1,0 +1,12 @@
+<div class="container text-center mt-4">
+  <table class="table">
+    <th>User Id</th>
+    <th>User Name</th>
+    <th>Status</th>
+    <tr *ngFor="let admins of adminarr">
+      <td>{{ admins.userid }}</td>
+      <td>{{ admins.username }}</td>
+      <td>{{ admins.userstatus | userstatus }}</td>
+    </tr>
+  </table>
+</div>

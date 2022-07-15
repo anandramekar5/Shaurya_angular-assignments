@@ -1,0 +1,18 @@
+<div class="container text-center mt-4">
+  <div>
+    <h6>{{ title | uppercase }}</h6>
+    <h6>{{ title | lowercase }}</h6>
+    <h6>{{ title | titlecase }}</h6>
+  </div>
+  <hr />
+  <div>
+    <h6><em>Indian Currency : </em>{{ trainingFees | currency: "INR" }}</h6>
+    <h6><em>American Currency : </em>{{ trainingFees | currency: "USD" }}</h6>
+    <h6><em>European Currency : </em>{{ trainingFees | currency: "EUR" }}</h6>
+  </div>
+  <hr />
+  <div>
+    <h6>{{ todayDate | date: "dd-MM-yyyy" }}</h6>
+    <h6>{{ todayDate | date: "dd-MMM-yyyy" }}</h6>
+  </div>
+</div>
