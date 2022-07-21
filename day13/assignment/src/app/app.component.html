@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-6">
+    <table class="table table-striped">
+      <thead>
+        <th>#id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of empdata">
+          <td>{{ e.empid }}</td>
+          <td>{{ e.empname }}</td>
+          <td>{{ e.empsalary }}</td>
+          <td>
+            <button
+              class="btn btn-primary btn-sm rounded-pill"
+              (click)="onSelect(e)"
+            >
+              select
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6">
+    <table class="table table-striped">
+      <thead>
+        <th>#id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e2 of empPushedData">
+          <td>{{ e2.empid }}</td>
+          <td>{{ e2.empname }}</td>
+          <td>{{ e2.empsalary }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

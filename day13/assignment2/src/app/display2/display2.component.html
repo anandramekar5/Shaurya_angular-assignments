@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-5"></div>
+    <div class="col-5">
+      <form [formGroup]="frmUser" (ngSubmit)="onSubmit()">
+        <h4>Input Form</h4>
+        <br />
+        <br />
+        <div class="form-group">
+          <label>
+            <h6><em>User Name :</em></h6></label
+          >
+          <input
+            type="text"
+            formControlName="username"
+            class="form-control"
+            placeholder="Enter user name"
+          />
+        </div>
+        <br /><br />
+        <div class="form-group">
+          <h6>Role Assign :</h6>
+          <div formArrayName="roleassign">
+            <div *ngFor="let role of roleassign.controls; let i = index">
+              <div [formGroupName]="i">
+                Role Name : {{ i }}
+                <div>
+                  <input
+                    type="text"
+                    formControlName="role"
+                    class="form-control"
+                  />
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-5">
+                    <button
+                      (click)="removeRole(i)"
+                      class="btn btn-danger btn-sm"
+                    >
+                      Remove Item
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <button (click)="addRole()" class="btn btn-warning btn-sm">
+              Add Role
+            </button>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div>
+          <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+          <button
+            style="margin-left: 20px"
+            type="reset"
+            class="btn btn-danger btn-sm ml-2"
+          >
+            Reset
+          </button>
+        </div>
+        <br /><br /><br />
+      </form>
+    </div>
+  </div>
+</div>
