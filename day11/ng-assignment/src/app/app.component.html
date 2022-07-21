@@ -1,0 +1,91 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <div class="mb-3">
+        <h3><em>Validations Form (Assignment 1)</em></h3>
+      </div>
+      <form
+        action=""
+        class="form-group"
+        [formGroup]="loginForm"
+        (ngSubmit)="userLogin()"
+      >
+        <div>
+          <label for="">Client Id</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="enter id here..."
+            formControlName="id"
+          />
+          <span
+            class="alert-danger"
+            *ngIf="loginForm.controls['id'].hasError('required')"
+            >client id required</span
+          >
+          <span class="alert-warning" *ngIf="f.id.errors?.minlength"
+            >min 6 charecters required</span
+          >
+        </div>
+
+        <div>
+          <label for="" class="mt-3">Client Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="enter name here..."
+            formControlName="name"
+          />
+          <span
+            class="alert-danger"
+            *ngIf="loginForm.controls['name'].hasError('required')"
+          >
+            client name is required
+          </span>
+          <span class="alert-warning" *ngIf="f.name.errors?.minlength"
+            >min 3 charecters required</span
+          >
+          <span class="alert-warning" *ngIf="f.name.errors?.maxlength">
+            max 20 charecters are valid
+          </span>
+        </div>
+
+        <div>
+          <label for="" class="mt-3">Client Address</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="enter address here..."
+            formControlName="address"
+          />
+          <span
+            class="alert-danger"
+            *ngIf="loginForm.controls['address'].hasError('required')"
+          >
+            client address required
+          </span>
+        </div>
+
+        <div>
+          <label for="" class="mt-3">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="enter phone number here..."
+            formControlName="phone"
+          />
+          <span
+            class="alert-danger"
+            *ngIf="loginForm.controls['phone'].hasError('pattern')"
+          >
+            only digits
+          </span>
+        </div>
+
+        <button class="mt-4 btn btn-primary rounded-pill">Submit</button>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
