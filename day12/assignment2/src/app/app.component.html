@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-8">
+    <h4 class="text-center bg-success text-white p-2">
+      <em>Output using EventEmitter (Assignment 2 - DataBinding)</em>
+    </h4>
+    <table class="table table-striped mt-4">
+      <thead>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Size</th>
+        <th>Status</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of productData">
+          <td>{{ p.productid | titlecase }}</td>
+          <td>{{ p.productname | titlecase }}</td>
+          <td>{{ p.productprice | currency: "INR" }}</td>
+          <td>{{ p.productsize | uppercase }}</td>
+          <td>{{ p.productstatus | titlecase }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-4">
+    <app-input-form
+      (productEventUpdate)="onProductEventUpdate($event)"
+    ></app-input-form>
+  </div>
+</div>

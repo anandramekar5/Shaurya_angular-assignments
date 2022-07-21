@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <th>User Id</th>
+      <th>Display Name</th>
+    </thead>
+    <tbody *ngFor="let a of userList">
+      <tr>
+        <td>{{ a.userid }}</td>
+        <td>{{ a.username }}</td>
+        <td>
+          <button
+            class="btn btn-primary btn-sm rounded-pill"
+            (click)="displayDetails(a.userid)"
+          >
+            display
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="selectedUserId === a.userid">
+        <td>
+          <app-parent [propAdmin]="a"></app-parent>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
