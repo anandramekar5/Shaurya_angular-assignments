@@ -1,0 +1,39 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "Shankar Seth",
+      "designation": "engineer"
+    },
+    {
+      "id": 2,
+      "name": "Chetan Bhagat",
+      "designation": "writer"
+    },
+    {
+      "id": 3,
+      "name": "Rajat Bhatia",
+      "designation": "film maker"
+    },
+    {
+      "id": "4",
+      "name": "Ajinkya Raut",
+      "designation": "Engineer"
+    },
+    {
+      "id": "5",
+      "name": "Marnus Labuchenh",
+      "designation": "Cricketer"
+    },
+    {
+      "id": "6",
+      "name": "Akhilesh Deshmukh",
+      "designation": "Developer"
+    },
+    {
+      "id": "7",
+      "name": "Ben Fillings",
+      "designation": "Cricketer"
+    }
+  ]
+}
