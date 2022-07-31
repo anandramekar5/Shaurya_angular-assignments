@@ -1,0 +1,46 @@
+{
+  "employee": [
+    {
+      "id": 101,
+      "name": "James Flaps",
+      "address": "South Port",
+      "city": "Texas"
+    },
+    {
+      "id": 102,
+      "name": "Alex Hales",
+      "address": "North Port",
+      "city": "Austin"
+    },
+    {
+      "id": 103,
+      "name": "Araon Finch",
+      "address": "East Port",
+      "city": "Livik"
+    },
+    {
+      "id": 104,
+      "name": "Sam Billings",
+      "address": "Bloomster",
+      "city": "Erangle"
+    },
+    {
+      "id": 105,
+      "name": "Moein Ali",
+      "address": "North Lankashire",
+      "city": "London"
+    },
+    {
+      "id": 106,
+      "name": "John Tupley",
+      "address": "South Port",
+      "city": "Ranfortia"
+    },
+    {
+      "id": 107,
+      "name": "Sanju Samson",
+      "address": "South Block",
+      "city": "Washington"
+    }
+  ]
+}
