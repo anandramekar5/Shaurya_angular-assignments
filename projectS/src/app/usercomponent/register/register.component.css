@@ -1,0 +1,55 @@
+.modal {
+  --bs-modal-border-radius: 30px;
+}
+.btn-close {
+  width: 0.5px;
+  height: 0.5px;
+  margin-right: 10px;
+}
+
+.form-control {
+  border: 2px solid rgba(27, 30, 29, 0.267);
+  width: 84%;
+  line-height: 1.8;
+  margin-left: 35px;
+  border-radius: 9px;
+}
+
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+h5 {
+  margin-top: 3px;
+}
+.register-btn {
+  border-color: white;
+}
+
+.register-btn {
+  background-image: linear-gradient(
+    to right,
+    rgb(160, 164, 227),
+    rgb(41, 86, 219)
+  );
+  width: 180px;
+  height: 45px;
+  margin-right: 150px;
+}
+
+.modal-title {
+  color: #454bf8;
+  margin-left: 182px;
+}
+
+.navbar {
+  background-image: linear-gradient(to right, orange, rgb(0, 153, 255));
+}
+
+.validation-css {
+  margin-left: 40px;
+}

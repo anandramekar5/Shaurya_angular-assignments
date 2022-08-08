@@ -1,0 +1,250 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+  <div class="container-fluid">
+    <h4 style="color: aliceblue">RentATruck</h4>
+    <div class="d-flex">
+      <button
+        class="btn btn-success btn-md rounded-pill"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        style="margin-right: 30px; width: 110px"
+      >
+        Register
+      </button>
+      <button
+        class="btn btn-success rounded-pill"
+        style="margin-right: 180px; width: 80px"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</nav>
+<div>
+  <!-- <table class="table table-striped container">
+    <thead>
+      <th>name</th>
+      <th>mobile</th>
+      <th>email</th>
+      <th>password</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ud of userData">
+        <td>{{ ud.name }}</td>
+        <td>{{ ud.contactNumber }}</td>
+        <td>{{ ud.email }}</td>
+        <td>{{ ud.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header mt-2">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <b>REGISTER</b>
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <!----------------------------------------------------------------------------------->
+        <div class="modal-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                formControlName="name"
+                class="form-control"
+                placeholder="Full Name"
+                [ngClass]="{
+                  'is-invalid': f.name.touched && f.name.errors
+                }"
+              />
+              <div
+                *ngIf="f.name.touched && f.name.errors"
+                class="invalid-feedback"
+              >
+                <div class="validation-css" *ngIf="f.name.errors.required">
+                  Full Name is required
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <input
+                type="text"
+                name="contactNumber"
+                formControlName="contactNumber"
+                class="form-control"
+                placeholder="Mobile Number"
+                [ngClass]="{
+                  'is-invalid':
+                    f.contactNumber.touched && f.contactNumber.errors
+                }"
+              />
+              <div
+                *ngIf="f.contactNumber.touched && f.contactNumber.errors"
+                class="invalid-feedback"
+              >
+                <div
+                  class="validation-css"
+                  *ngIf="f.contactNumber.errors.required"
+                >
+                  Mobile Number is required
+                </div>
+                <div
+                  class="validation-css"
+                  *ngIf="f.contactNumber.errors.minlength"
+                >
+                  Mobile Number must be at least 10 digits
+                </div>
+                <div
+                  class="validation-css"
+                  *ngIf="f.contactNumber.errors.maxlength"
+                >
+                  Mobile Number must not be greater than 12 digits
+                </div>
+                <div
+                  class="validation-css"
+                  *ngIf="f.contactNumber.errors?.pattern"
+                >
+                  *Invalid Characters, Enter digits only
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <input
+                type="email"
+                name="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Email Id"
+                [ngClass]="{
+                  'is-invalid': f.email.touched && f.email.errors
+                }"
+              />
+              <div
+                *ngIf="f.email.touched && f.email.errors"
+                class="invalid-feedback"
+              >
+                <div class="validation-css" *ngIf="f.email.errors.required">
+                  Email is required
+                </div>
+                <div class="validation-css" *ngIf="f.email.errors?.pattern">
+                  *Email address is invalid
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <input
+                type="password"
+                name="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="Password"
+                [ngClass]="{
+                  'is-invalid': f.password.touched && f.password.errors
+                }"
+              />
+              <div
+                *ngIf="f.password.touched && f.password.errors"
+                class="invalid-feedback"
+              >
+                <div class="validation-css" *ngIf="f.password.errors.required">
+                  Password is required
+                </div>
+                <div class="validation-css" *ngIf="f.password.errors?.pattern">
+                  *use at least one special character @ $ ! % * # ? &
+                </div>
+              </div>
+              <!-- {{ pass }} -->
+            </div>
+            <div class="form-group mt-4">
+              <input
+                type="text"
+                name="confirmPassword"
+                class="form-control"
+                formControlName="confirmPassword"
+                placeholder="Confirm Password"
+                [ngClass]="{
+                  'is-invalid':
+                    f.confirmPassword.touched && f.confirmPassword.errors
+                }"
+              />
+              <div
+                *ngIf="f.confirmPassword.touched && f.confirmPassword.errors"
+                class="invalid-feedback"
+              >
+                <div
+                  class="validation-css"
+                  *ngIf="f.confirmPassword.errors.required"
+                >
+                  This Field is required
+                </div>
+              </div>
+            </div>
+            <!-- {{ pass !== cpass ? "not match" : "match" }} -->
+            <ng-container
+              *ngIf="
+                registerForm.controls['password'].value !==
+                  registerForm.controls['confirmPassword'].value &&
+                registerForm.controls['confirmPassword']?.touched
+              "
+            >
+              <p
+                style="
+                  color: rgb(209, 27, 27);
+                  font-size: 14px;
+                  margin-left: 35px;
+                  margin-top: 5px;
+                "
+              >
+                *Password does't matched
+              </p>
+            </ng-container>
+            <!-- <div class="mt-2 form-check" style="margin-left: 35px">
+              <input type="checkbox" class="form-check-input" /><span
+                style="color: #8b9196; margin-left: 4px; font-size: 15px"
+                >i agree to</span
+              ><span style="margin-left: 4px"
+                ><a href="">terms and conditions</a></span
+              >
+            </div> -->
+            <div>
+              <button
+                type="submit"
+                class="register-btn btn btn-secondary text-white rounded-pill mt-4"
+                data-bs-dismiss="modal"
+                style="margin-left: 135px"
+                [disabled]="registerForm.invalid"
+              >
+                <h5>REGISTER</h5>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="">
+            <p style="color: #8b9196; margin-right: 118px; font-size: 15px">
+              Aready have an account
+              <span style="margin-left: 4px"><a href="">login here</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
